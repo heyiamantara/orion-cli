@@ -68,7 +68,7 @@ export default function LandingPage() {
             <p className="text-on-surface-variant max-w-2xl mx-auto text-lg md:text-xl font-light">
               Build, search, and automate with Orion. The most powerful CLI agent built for developers.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
+            <div className="flex flex-col sm:flex-row gap-4 items-center justify-center pt-8">
               <Link href="/sign-up">
                 <button className="bg-primary text-on-primary font-label font-bold py-4 px-10 text-sm tracking-widest hover:shadow-[0_0_30px_rgba(156,255,147,0.4)] transition-all active:scale-95">
                   GET STARTED
@@ -210,7 +210,7 @@ export default function LandingPage() {
             <p className="text-on-surface-variant text-lg max-w-xl mx-auto">
               Join the league of developers architecting the future from their command line. Orion is open for early access.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6 z-10 relative">
+            <div className="flex flex-col sm:flex-row gap-4 items-center justify-center pt-6 z-10 relative">
               <Link href="/device">
                 <button className="bg-primary hover:bg-primary-fixed-dim text-on-primary font-label font-bold py-4 px-10 text-sm tracking-widest flex items-center justify-center gap-3 group transition-colors">
                   <span className="material-symbols-outlined text-lg" data-icon="login">
@@ -221,7 +221,7 @@ export default function LandingPage() {
               </Link>
               <button 
                 onClick={handleCopy} 
-                className="bg-background w-56 text-on-surface border border-outline-variant/30 font-label font-bold py-4 text-sm tracking-widest hover:border-primary transition-colors"
+                className="bg-background text-on-surface border border-outline-variant/30 font-label font-bold py-4 px-10 text-sm tracking-widest hover:border-primary transition-colors"
                >
                 {copied ? "COPIED TO CLIPBOARD!" : "INSTALL VIA NPM"}
               </button>
