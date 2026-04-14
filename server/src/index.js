@@ -50,7 +50,7 @@ app.get("/api/me/:access_token", async (req, res) => {
   }
 });
 
-// Chat endpoint — CLI sends message, server calls AI and streams back
+// Chat endpoint — regular chat
 app.post("/api/chat", async (req, res) => {
   try {
     const session = await getSession(req);
@@ -70,7 +70,6 @@ app.post("/api/chat", async (req, res) => {
     const dbMessages = await chatService.getMessages(conversation.id);
     const aiMessages = chatService.formatMessagesForAI(dbMessages);
 
-    // Stream response back
     res.setHeader("Content-Type", "text/plain");
     res.setHeader("Transfer-Encoding", "chunked");
 
@@ -82,7 +81,6 @@ app.post("/api/chat", async (req, res) => {
 
     await chatService.addMessage(conversation.id, "assistant", fullResponse);
 
-    // Update title on first message
     const messages = await chatService.getMessages(conversation.id);
     if (messages.length <= 2) {
       await chatService.updateTitle(conversation.id, message.slice(0, 50));
@@ -91,6 +89,66 @@ app.post("/api/chat", async (req, res) => {
     res.end(JSON.stringify({ conversationId: conversation.id }));
   } catch (error) {
     console.error("Chat error:", error);
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// Tool chat endpoint
+app.post("/api/chat/tool", async (req, res) => {
+  try {
+    const session = await getSession(req);
+    if (!session) return res.status(401).json({ error: "Unauthorized" });
+
+    const { message, conversationId } = req.body;
+    if (!message) return res.status(400).json({ error: "Message is required" });
+
+    const { getEnabledTools, enableTools } = await import("./config/tool.config.js");
+    enableTools(["google_search", "code_execution"]);
+    const tools = getEnabledTools();
+
+    const conversation = await chatService.getOrCreateConversation(
+      session.user.id, conversationId, "tool"
+    );
+
+    await chatService.addMessage(conversation.id, "user", message);
+    const dbMessages = await chatService.getMessages(conversation.id);
+    const aiMessages = chatService.formatMessagesForAI(dbMessages);
+
+    res.setHeader("Content-Type", "text/plain");
+    res.setHeader("Transfer-Encoding", "chunked");
+
+    let fullResponse = "";
+    await aiService.sendMessage(aiMessages, (chunk) => {
+      fullResponse += chunk;
+      res.write(chunk);
+    }, tools);
+
+    await chatService.addMessage(conversation.id, "assistant", fullResponse);
+    res.end(JSON.stringify({ conversationId: conversation.id }));
+  } catch (error) {
+    console.error("Tool chat error:", error);
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// Agent endpoint
+app.post("/api/chat/agent", async (req, res) => {
+  try {
+    const session = await getSession(req);
+    if (!session) return res.status(401).json({ error: "Unauthorized" });
+
+    const { message } = req.body;
+    if (!message) return res.status(400).json({ error: "Message is required" });
+
+    const { generateApplication } = await import("./config/agent.config.js");
+
+    res.setHeader("Content-Type", "text/plain");
+    res.setHeader("Transfer-Encoding", "chunked");
+
+    const result = await generateApplication(message, aiService);
+    res.end(JSON.stringify(result));
+  } catch (error) {
+    console.error("Agent error:", error);
     res.status(500).json({ error: error.message });
   }
 });
