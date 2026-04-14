@@ -7,9 +7,9 @@ export const auth = betterAuth({
   database: prismaAdapter(prisma, {
     provider: "postgresql",
   }),
-  baseURL: "http://localhost:3005",
+  baseURL: "https://orion-cli.onrender.com",
   basePath: "/api/auth",
-  trustedOrigins: ["http://localhost:3000"],
+  trustedOrigins: ["https://orion-cli.onrender.com"],
   plugins: [
     bearer(),
     deviceAuthorization({
