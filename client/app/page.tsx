@@ -242,17 +242,7 @@ export default function LandingPage() {
         <div className="text-[#767575] font-headline text-xs uppercase tracking-widest">
           © 2026 ORION_V.1.2.3
         </div>
-        <div className="flex gap-8">
-          <a className="text-[#767575] hover:text-white transition-colors font-headline text-xs uppercase tracking-widest" href="#">
-            GITHUB
-          </a>
-          <a className="text-[#767575] hover:text-white transition-colors font-headline text-xs uppercase tracking-widest" href="#">
-            DOCS
-          </a>
-          <a className="text-[#767575] hover:text-white transition-colors font-headline text-xs uppercase tracking-widest" href="#">
-            DISCORD
-          </a>
-        </div>
+
         <div className="flex items-center gap-2 text-[#9cff93]">
           <span className="material-symbols-outlined text-sm" data-icon="bolt">
             bolt

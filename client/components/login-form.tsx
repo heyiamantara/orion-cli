@@ -161,14 +161,9 @@ export function LoginForm() {
 
       {/* Footer */}
       <footer className="fixed bottom-0 w-full bg-background border-t border-white/5 py-3">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-2">
+        <div className="max-w-7xl mx-auto px-6 flex items-center justify-center">
           <div className="text-[10px] text-on-surface-variant font-medium tracking-wide">
             © 2026 Orion Systems.
-          </div>
-          <div className="flex gap-6">
-            <Link className="text-[10px] text-on-surface-variant hover:text-primary font-bold uppercase tracking-widest transition-colors" href="#">Docs</Link>
-            <Link className="text-[10px] text-on-surface-variant hover:text-primary font-bold uppercase tracking-widest transition-colors" href="#">API Ref</Link>
-            <Link className="text-[10px] text-on-surface-variant hover:text-primary font-bold uppercase tracking-widest transition-colors" href="#">Status</Link>
           </div>
         </div>
       </footer>
