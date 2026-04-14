@@ -13,7 +13,7 @@ export function LoginForm() {
     setLoadingProvider("github");
     await authClient.signIn.social({
       provider: "github",
-      callbackURL: "http://localhost:3000/dashboard"
+      callbackURL: "https://orion-cli.vercel.app/dashboard"
     });
     setLoadingProvider(null);
   };
@@ -24,7 +24,7 @@ export function LoginForm() {
     const { data, error } = await authClient.signIn.email({
       email,
       password,
-      callbackURL: "http://localhost:3000/dashboard"
+      callbackURL: "https://orion-cli.vercel.app/dashboard"
     });
     
     if (error) {

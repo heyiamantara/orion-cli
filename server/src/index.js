@@ -12,7 +12,7 @@ const chatService = new ChatService();
 
 app.use(
   cors({
-    origin: ["https://orion-cli.onrender.com", "http://localhost:3000"],
+    origin: ["https://orion-cli.vercel.app", "http://localhost:3000"],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
@@ -101,7 +101,7 @@ app.get("/api/client-id", (req, res) => {
 
 app.get("/device", async (req, res) => {
   const { user_code } = req.query;
-  res.redirect(`https://orion-cli.onrender.com/device?user_code=${user_code}`);
+  res.redirect(`https://orion-cli.vercel.app/device?user_code=${user_code}`);
 });
 
 app.listen(port, () => {

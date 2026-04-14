@@ -9,7 +9,7 @@ export const auth = betterAuth({
   }),
   baseURL: "https://orion-cli.onrender.com",
   basePath: "/api/auth",
-  trustedOrigins: ["https://orion-cli.onrender.com"],
+  trustedOrigins: ["https://orion-cli.vercel.app"],
   plugins: [
     bearer(),
     deviceAuthorization({
