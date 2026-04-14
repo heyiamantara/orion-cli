@@ -60,7 +60,7 @@ export default function DocsPage() {
               <div className="inline-flex items-center gap-2 px-3 py-1 bg-surface-container-low border border-outline-variant/20 rounded-sm">
                 <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
                 <span className="text-[10px] font-label text-on-surface-variant tracking-[0.2em] uppercase">
-                  VERSION 1.0.3
+                  VERSION 1.1.0
                 </span>
               </div>
               <h1 className="text-5xl font-headline font-bold text-on-background tracking-tight">
