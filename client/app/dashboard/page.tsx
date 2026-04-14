@@ -104,7 +104,7 @@ export default function Dashboard() {
 
       {/* Footer */}
       <footer className="w-full bg-background border-t border-white/5 py-3 mt-auto">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-2 text-center md:text-left">
+        <div className="max-w-7xl mx-auto px-6 flex justify-center items-center">
           <div className="text-[10px] text-on-surface-variant font-medium tracking-wide">
             © 2026 Orion Systems.
           </div>
