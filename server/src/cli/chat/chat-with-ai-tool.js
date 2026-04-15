@@ -59,10 +59,15 @@ export async function startToolChat() {
         const { done, value } = await reader.read();
         if (done) break;
         const chunk = decoder.decode(value);
-        if (chunk.startsWith('{"conversationId"')) {
-          try { conversationId = JSON.parse(chunk).conversationId; } catch {}
+
+        const jsonIndex = chunk.indexOf('{"conversationId"');
+        if (jsonIndex !== -1) {
+          const textPart = chunk.slice(0, jsonIndex);
+          if (textPart) process.stdout.write(textPart);
+          try { conversationId = JSON.parse(chunk.slice(jsonIndex)).conversationId; } catch {}
           break;
         }
+
         fullResponse += chunk;
         process.stdout.write(chunk);
       }

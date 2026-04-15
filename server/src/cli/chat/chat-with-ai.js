@@ -84,11 +84,17 @@ async function chatLoop(conversationId) {
         const { done, value } = await reader.read();
         if (done) break;
         const chunk = decoder.decode(value);
-        // Last chunk has the conversationId JSON, skip rendering it
-        if (chunk.startsWith('{"conversationId"')) {
-          try { currentConversationId = JSON.parse(chunk).conversationId; } catch {}
+
+        // The conversationId JSON may be appended to the last text chunk
+        const jsonIndex = chunk.indexOf('{"conversationId"');
+        if (jsonIndex !== -1) {
+          // Print any text that came before the JSON
+          const textPart = chunk.slice(0, jsonIndex);
+          if (textPart) process.stdout.write(textPart);
+          try { currentConversationId = JSON.parse(chunk.slice(jsonIndex)).conversationId; } catch {}
           break;
         }
+
         fullResponse += chunk;
         process.stdout.write(chunk);
       }
