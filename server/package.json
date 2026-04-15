@@ -1,6 +1,6 @@
 {
   "name": "orion-ai",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "Orion AI CLI tool",
   "main": "src/index.js",
   "bin": {
