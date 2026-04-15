@@ -82,7 +82,7 @@ export default function LandingPage() {
             </div>
             
             {/* Terminal Visual */}
-            <div className="mt-20 w-full max-w-3xl mx-auto aspect-video bg-[#111111] border border-outline-variant/30 terminal-glow relative overflow-hidden rounded-lg shadow-2xl">
+            <div className="mt-20 w-full max-w-3xl mx-auto bg-[#111111] border border-outline-variant/30 terminal-glow relative rounded-lg shadow-2xl">
               <div className="h-10 bg-[#2d2d2d] flex items-center px-4 relative">
                 <div className="flex gap-2 absolute left-4">
                   <div className="w-3 h-3 rounded-full bg-[#ff5f56]" />
