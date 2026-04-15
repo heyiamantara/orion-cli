@@ -59,7 +59,7 @@ export default function DocsPage() {
             <header id="introduction" className="space-y-6 border-b border-white/5 pb-10">
               <div className="inline-flex items-center gap-2 px-3 py-1 bg-surface-container-low border border-outline-variant/20 rounded-sm">
                 <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-                <span className="text-[10px] font-label text-on-surface-variant tracking-[0.2em] uppercase">Version 1.2.3 — Stable</span>
+                <span className="text-[10px] font-label text-on-surface-variant tracking-[0.2em] uppercase">Version 1.2.4 — Stable</span>
               </div>
               <h1 className="text-5xl font-headline font-bold text-on-background tracking-tight">Orion Documentation</h1>
               <p className="text-xl text-on-surface-variant font-light leading-relaxed">
@@ -135,7 +135,7 @@ export default function DocsPage() {
                   <span className="text-[#9cff93]">~/workspace ❯</span>
                   <span className="text-gray-300">orion --version</span>
                 </div>
-                <div className="text-gray-500 pl-1">1.2.3</div>
+                <div className="text-gray-500 pl-1">1.2.4</div>
               </div>
               <div className="bg-primary/5 border border-primary/20 rounded-lg p-4 flex gap-4">
                 <span className="material-symbols-outlined text-primary mt-0.5 text-[18px]">info</span>

@@ -227,7 +227,7 @@ export default function LandingPage() {
               </button>
             </div>
             <div className="pt-10 flex items-center justify-center gap-6 text-on-surface-variant font-mono text-[10px] tracking-widest uppercase">
-              <span>Version 1.2.3</span>
+              <span>Version 1.2.4</span>
               <span className="w-1 h-1 bg-outline-variant rounded-full" />
               <span>Stable Release</span>
               <span className="w-1 h-1 bg-outline-variant rounded-full" />
@@ -240,7 +240,7 @@ export default function LandingPage() {
       {/* Footer */}
       <footer className="bg-[#0e0e0e] border-t border-[#484847]/15 px-8 py-12 flex flex-col md:flex-row justify-between items-center gap-6 w-full relative z-10">
         <div className="text-[#767575] font-headline text-xs uppercase tracking-widest">
-          © 2026 ORION_V.1.2.3
+          © 2026 ORION_V.1.2.4
         </div>
 
         <div className="flex items-center gap-2 text-[#9cff93]">
