@@ -38,12 +38,7 @@ export default function LandingPage() {
           >
             DOCS
           </Link>
-          <Link
-            className="text-white font-headline text-xs uppercase tracking-widest hover:bg-[#131313] hover:text-[#00fc40] transition-colors duration-200"
-            href="#"
-          >
-            COMMUNITY
-          </Link>
+
         </nav>
         <Link href="/sign-in">
           <button className="bg-primary text-on-primary font-label text-xs font-bold tracking-widest px-6 py-2 scale-95 active:opacity-80 transition-all hover:shadow-[0_0_15px_rgba(156,255,147,0.5)]">
