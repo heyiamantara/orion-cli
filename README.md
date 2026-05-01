@@ -3,15 +3,14 @@
 <img src="https://img.shields.io/badge/version-1.2.4-blue?style=for-the-badge" alt="Version 1.2.4" />
 <img src="https://img.shields.io/badge/status-stable-brightgreen?style=for-the-badge" alt="Stable" />
 <img src="https://img.shields.io/badge/node-%3E%3D18.0.0-339933?style=for-the-badge&logo=node.js&logoColor=white" alt="Node.js 18+" />
-<img src="https://img.shields.io/badge/license-MIT-purple?style=for-the-badge" alt="MIT License" />
 
 # 🚀 Orion
 
 **A command-line AI agent built for developers.**
 
-Orion brings Google Gemini directly into your terminal — with conversational AI, tool-assisted execution, autonomous code generation, and OAuth-secured authentication, all from your shell.
+Orion brings Google Gemini directly into your terminal with conversational AI, tool-assisted execution, autonomous code generation, and OAuth-secured authentication, all from your shell.
 
-[Installation](#installation) · [Authentication](#authentication) · [Commands](#commands) · [Execution Modes](#execution-modes) · [Tools](#tool-configuration) · [Contributing](#contributing)
+[Installation](#installation) | [Authentication](#authentication) | [Commands](#commands) | [Execution Modes](#execution-modes) | [Tools](#tool-configuration) | [Contributing](#contributing)
 
 ---
 
@@ -25,7 +24,7 @@ Orion brings Google Gemini directly into your terminal — with conversational A
 | 🔍 **Web Search** | Real-time Google Search integration for up-to-date answers |
 | 💻 **App Generation** | Scaffold complete, production-ready applications from a single natural language prompt |
 | 🔧 **Tool Calling** | Execute code, search the web, and analyze URLs autonomously |
-| 🔐 **OAuth Auth** | Secure device authorization flow — no credentials typed in the terminal |
+| 🔐 **OAuth Auth** | Secure device authorization flow, no credentials typed in the terminal |
 | 💾 **Conversation History** | Persistent conversation IDs backed by PostgreSQL with Prisma ORM |
 | 🤖 **Autonomous Agent** | Deep-reasoning agentic mode that plans and executes multi-step engineering tasks |
 | 🎨 **Beautiful CLI** | Modern terminal UI with colors, boxen layouts, and clack prompts |
@@ -85,7 +84,7 @@ Orion uses the **OAuth 2.0 Device Authorization Grant** to authenticate your ter
 
 ### Step-by-Step Login
 
-**Step 1 — Initiate Login**
+**Step 1: Initiate Login**
 
 Run the login command from any directory. Orion contacts the authorization server and retrieves a device code.
 
@@ -93,11 +92,11 @@ Run the login command from any directory. Orion contacts the authorization serve
 orion login
 ```
 
-**Step 2 — Authorize in Browser**
+**Step 2: Authorize in Browser**
 
 The terminal displays a verification URL and a short user code. Open the URL in your browser (Orion can open it automatically) and enter the code to authorize the device. The CLI polls the server at a configurable interval and resumes automatically once authorization is confirmed.
 
-**Step 3 — Token Storage**
+**Step 3: Token Storage**
 
 Upon successful authorization, the access token, refresh token, token type, and expiry timestamp are written to `~/.orion/token.json`. This file is validated on every subsequent command. Tokens within **5 minutes of expiry** are treated as expired.
 
@@ -188,9 +187,9 @@ Type exit or press Ctrl+C to end the session.
 Extends the conversational interface with access to registered system tools. In this mode, the model can invoke tools mid-response to retrieve real-time information or execute code before formulating its final answer.
 
 **Available tools:**
-- **Google Search** — live web results
-- **Code Execution** — sandboxed Python computations
-- **URL Context** — analysis of up to 20 URLs per request
+- **Google Search**: live web results
+- **Code Execution**: sandboxed Python computations
+- **URL Context**: analysis of up to 20 URLs per request
 
 **Best suited for:** tasks requiring up-to-date information, numerical computation, or analysis of external resources.
 
@@ -198,7 +197,7 @@ Extends the conversational interface with access to registered system tools. In 
 
 ### 🤖 Agentic Mode
 
-A deep-reasoning mode where Orion autonomously **plans and executes multi-step tasks** from a single high-level instruction. The agent uses structured output generation to scaffold complete applications — including all source files, configuration, and setup commands — written directly to your working directory.
+A deep-reasoning mode where Orion autonomously **plans and executes multi-step tasks** from a single high-level instruction. The agent uses structured output generation to scaffold complete applications, including all source files, configuration, and setup commands, written directly to your working directory.
 
 The generation pipeline uses a **Zod-validated schema** to ensure every output includes:
 - 📁 A folder name
@@ -249,7 +248,7 @@ orion/
 ├── server/
 │   └── src/
 │       ├── cli/
-│       │   ├── main.js                    # CLI entry point — all commands registered here
+│       │   ├── main.js                    # CLI entry point, all commands registered here
 │       │   └── commands/
 │       │       └── auth/
 │       │           ├── login.js           # Device authorization flow & token storage
