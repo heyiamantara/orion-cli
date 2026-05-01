@@ -4,7 +4,7 @@
 <img src="https://img.shields.io/badge/status-stable-brightgreen?style=for-the-badge" alt="Stable" />
 <img src="https://img.shields.io/badge/node-%3E%3D18.0.0-339933?style=for-the-badge&logo=node.js&logoColor=white" alt="Node.js 18+" />
 
-# 🚀 Orion
+# Orion
 
 **A command-line AI agent built for developers.**
 
